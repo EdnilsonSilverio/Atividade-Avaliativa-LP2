@@ -24,7 +24,8 @@ namespace ConsoleCSharpBasico_TeuNome{
             //Nullable();
             //Conversao();
             //CriarObjetos();
-            DemonstrarOperadores();
+            //DemonstrarOperadores();
+            ConcatenacaoDeStrings();
         }
 
         static void Using()
@@ -138,25 +139,47 @@ namespace ConsoleCSharpBasico_TeuNome{
 
         static void DemonstrarOperadores()
         {
-        int x = 15;
-        int y = 12;
-        bool fazCalor = true;
-        bool fazFrio = false;
+            int x = 15;
+            int y = 12;
+            bool fazCalor = true;
+            bool fazFrio = false;
 
-        // Operadores Relacionais
-        Console.WriteLine($"x > y: {x > y}"); // verifica se x é maior que y
-        Console.WriteLine($"x < y: {x < y}"); // verifica se x é menor que y
-        Console.WriteLine($"x == 15: {x == 15}"); // verificar se x é igual a 15
-        Console.WriteLine($"x != y: {x != y}"); // verifica se x é diferente de y
-        Console.WriteLine($"x >= 15: {x >= 15}"); // verifica se x é maior ou igual a 15
-        Console.WriteLine($"y <= 5: {y <= 5}"); // verificar se y é menor ou igual a 5
+            // Operadores Relacionais
+            Console.WriteLine($"x > y: {x > y}"); // verifica se x é maior que y
+            Console.WriteLine($"x < y: {x < y}"); // verifica se x é menor que y
+            Console.WriteLine($"x == 15: {x == 15}"); // verificar se x é igual a 15
+            Console.WriteLine($"x != y: {x != y}"); // verifica se x é diferente de y
+            Console.WriteLine($"x >= 15: {x >= 15}"); // verifica se x é maior ou igual a 15
+            Console.WriteLine($"y <= 5: {y <= 5}"); // verificar se y é menor ou igual a 5
+
+            Console.WriteLine();
+
+            // Operadores Lógicos
+            Console.WriteLine($"Sol E Frio: {fazCalor && fazFrio}"); // Retorna true se sol e frio forem verdadeiros
+            Console.WriteLine($"Sol OU Frio: {fazCalor || fazFrio}"); // Retornaa true se sol ou frio forem verdadeiros
+            Console.WriteLine($"Não está Frio: {!fazFrio}"); // Retorna tru se frio for false e virse versa
+        }
         
-        Console.WriteLine();
+        static void ConcatenacaoDeStrings()
+        {
+        string nome = "Ednilson";
+        string sobrenome = "Silvério";
+        int idade = 21;
+        
+        string nomeCompleto = nome + " " + sobrenome; //Usando o operador de soma (+)
+        string mensagemIdade = "Nome: " + nomeCompleto + "\nIdade: " + idade;
+        Console.WriteLine("Mensagem com o Operador Soma");
+        Console.WriteLine(mensagemIdade);
+        Console.WriteLine("------------------------------------");
 
-        // Operadores Lógicos
-        Console.WriteLine($"Sol E Frio: {fazCalor && fazFrio}"); // Retorna true se sol e frio forem verdadeiros
-        Console.WriteLine($"Sol OU Frio: {fazCalor || fazFrio}"); // Retornaa true se sol ou frio forem verdadeiros
-        Console.WriteLine($"Não está Frio: {!fazFrio}"); // Retorna tru se frio for false e virse versa
+        string mensagemFormatada = $"Nome: {nome} {sobrenome} \nIdade: {idade}"; // Usando a interpolação de strings, forma mais utilizada
+        Console.WriteLine("Mensagem com interpolação");
+        Console.WriteLine(mensagemFormatada);
+        Console.WriteLine("------------------------------------");
+ 
+        string saudacao = String.Concat("Olá, ", nome, "!"); //Usando String.Concat()
+        Console.WriteLine("Mensagem com String.Concat()");
+        Console.WriteLine(saudacao);
         }
     }
 }  
