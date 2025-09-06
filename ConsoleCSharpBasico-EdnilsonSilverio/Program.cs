@@ -27,7 +27,8 @@ namespace ConsoleCSharpBasico_TeuNome{
             //DemonstrarOperadores();
             //ConcatenacaoDeStrings();
             //Arrays();
-            Condicionais();
+            //Condicionais();
+            Comentarios();
         }
 
         static void Using()
@@ -220,15 +221,18 @@ namespace ConsoleCSharpBasico_TeuNome{
             }
         }
 
-         static void Condicionais()
+        static void Condicionais()
         {
             Console.WriteLine("Exemplo com if e else");
             int idade = 17;
-            
+
             // Estrutura if e else simples para verificação de maior idade.
-            if (idade >= 18){
+            if (idade >= 18)
+            {
                 Console.WriteLine("Você é maior de idade.");
-            }else{
+            }
+            else
+            {
                 Console.WriteLine("Você é menor de idade.");
             }
 
@@ -236,21 +240,29 @@ namespace ConsoleCSharpBasico_TeuNome{
             int pontuacao = 85;
 
             // Estrutura if, else if e else aninhada, para verificação de pontuação
-            if (pontuacao >= 90){
+            if (pontuacao >= 90)
+            {
                 Console.WriteLine("Excelente! Sua nota é 'Ótima'.");
-            }else if (pontuacao >= 80){
+            }
+            else if (pontuacao >= 80)
+            {
                 Console.WriteLine("Muito bom! Sua nota é 'Boa'.");
-            }else if (pontuacao >= 70){
+            }
+            else if (pontuacao >= 70)
+            {
                 Console.WriteLine("Bom. Sua nota é 'Intermediária'.");
-            }else{
+            }
+            else
+            {
                 Console.WriteLine("Precisa melhorar. Sua nota é 'Abaixo da média'.");
             }
 
             Console.WriteLine("\nExemplo com switch case");
             char opcao = 'B';
-            
-            // Estrutura 'switch case'
-            switch (opcao){
+
+            // Estrutura switch case
+            switch (opcao)
+            {
                 case 'A':
                     Console.WriteLine("Opção selecionada: A. Iniciar novo jogo.");
                     break;
@@ -264,6 +276,51 @@ namespace ConsoleCSharpBasico_TeuNome{
                     Console.WriteLine("Opção inválida.");
                     break;
             }
+        }
+        
+        static void Comentarios()
+        {
+            // Este é um comentário de linha única.
+            // Ele é muito utilizado para informar o comportamente de uma linha específica:
+            int idade = 21; // varíavel do tipo int que guarda o valor 21
+
+            /*
+            Este é um comentário de múltiplas linhas.
+            Ele é usado para explicações mais longas,
+            como o propósito de um bloco de código ou uma função.
+            Como por exemplo:
+            O condicional a seguir classifica se o usuário pode ou
+            não dirigir, de acordo coma a idade:
+            */
+            if (idade >= 18)
+            {
+                Console.WriteLine("Pode dirigir.");
+            }
+            else
+            {
+                Console.WriteLine("Não pode dirigir.");
+            }
+
+            /* 
+            De acordo com algumas pesquisas a parte realizadas por mim,
+            identifiquei que há outros tipos de comentários bem mais específicos
+            como:
+            */
+            /// <summary>
+            /// Este é um comentário de documentação XML.
+            /// Ele é usado para gerar documentação automatizada do código.
+            /// O sumário descreve a finalidade de um método específico.
+            /// </summary>
+            // param é muito utilizado para explica a finalidade de um parâmetro:
+            /// <param name="nome">O nome da pessoa a ser cumprimentada.</param>
+            /// <returns>Retorna uma string de saudação.</returns>
+        
+            string Cumprimentar(string nome){
+                return $"Olá, {nome}!";
+            }
+
+            string saudacao = Cumprimentar("João");
+            Console.WriteLine(saudacao);
         }
     }
 }  
