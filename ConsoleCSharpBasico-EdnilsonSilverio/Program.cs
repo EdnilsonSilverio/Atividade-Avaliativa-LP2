@@ -26,7 +26,8 @@ namespace ConsoleCSharpBasico_TeuNome{
             //CriarObjetos();
             //DemonstrarOperadores();
             //ConcatenacaoDeStrings();
-            Arrays();
+            //Arrays();
+            Condicionais();
         }
 
         static void Using()
@@ -182,12 +183,12 @@ namespace ConsoleCSharpBasico_TeuNome{
             Console.WriteLine("Mensagem com String.Concat()");
             Console.WriteLine(saudacao);
         }
-        
+
         static void Arrays()
         {
-    
+
             int[] numeros = new int[5]; // Criando um array de inteiros de 5 posições.
-            
+
             // Atribuindo valores aos elementos do array de acordo com o indice de posição
             numeros[0] = 10;
             numeros[1] = 20;
@@ -202,9 +203,9 @@ namespace ConsoleCSharpBasico_TeuNome{
             Console.WriteLine($"O terceiro número no array é: {numeros[2]}");
             Console.WriteLine($"O último número no array é: {numeros[4]}");
 
-            
+
             // Declarando e inicializando um array de strings com valores
-            string[] motos = {"MT-03", "R3", "CB300", "G310GS"};
+            string[] motos = { "MT-03", "R3", "CB300", "G310GS" };
 
             //Acessando um elemento e o tamanho do array
             Console.WriteLine("---------------------------------------\nArray de motos:");
@@ -213,8 +214,55 @@ namespace ConsoleCSharpBasico_TeuNome{
 
             // Percorrendo o array com um loop 'for'e imprimindo cada elemento
             Console.WriteLine("\nLista de motos:");
-            for (int i = 0; i < motos.Length; i++){
+            for (int i = 0; i < motos.Length; i++)
+            {
                 Console.WriteLine(motos[i]);
+            }
+        }
+
+         static void Condicionais()
+        {
+            Console.WriteLine("Exemplo com if e else");
+            int idade = 17;
+            
+            // Estrutura if e else simples para verificação de maior idade.
+            if (idade >= 18){
+                Console.WriteLine("Você é maior de idade.");
+            }else{
+                Console.WriteLine("Você é menor de idade.");
+            }
+
+            Console.WriteLine("\nExemplo com if, else if e else");
+            int pontuacao = 85;
+
+            // Estrutura if, else if e else aninhada, para verificação de pontuação
+            if (pontuacao >= 90){
+                Console.WriteLine("Excelente! Sua nota é 'Ótima'.");
+            }else if (pontuacao >= 80){
+                Console.WriteLine("Muito bom! Sua nota é 'Boa'.");
+            }else if (pontuacao >= 70){
+                Console.WriteLine("Bom. Sua nota é 'Intermediária'.");
+            }else{
+                Console.WriteLine("Precisa melhorar. Sua nota é 'Abaixo da média'.");
+            }
+
+            Console.WriteLine("\nExemplo com switch case");
+            char opcao = 'B';
+            
+            // Estrutura 'switch case'
+            switch (opcao){
+                case 'A':
+                    Console.WriteLine("Opção selecionada: A. Iniciar novo jogo.");
+                    break;
+                case 'B':
+                    Console.WriteLine("Opção selecionada: B. Carregar jogo salvo.");
+                    break;
+                case 'C':
+                    Console.WriteLine("Opção selecionada: C. Configurações.");
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida.");
+                    break;
             }
         }
     }
