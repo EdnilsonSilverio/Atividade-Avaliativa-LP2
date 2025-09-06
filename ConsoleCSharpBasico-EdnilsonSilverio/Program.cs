@@ -28,7 +28,8 @@ namespace ConsoleCSharpBasico_TeuNome{
             //ConcatenacaoDeStrings();
             //Arrays();
             //Condicionais();
-            Comentarios();
+            //Comentarios();
+            Interpolação();
         }
 
         static void Using()
@@ -277,7 +278,7 @@ namespace ConsoleCSharpBasico_TeuNome{
                     break;
             }
         }
-        
+
         static void Comentarios()
         {
             // Este é um comentário de linha única.
@@ -314,13 +315,33 @@ namespace ConsoleCSharpBasico_TeuNome{
             // param é muito utilizado para explica a finalidade de um parâmetro:
             /// <param name="nome">O nome da pessoa a ser cumprimentada.</param>
             /// <returns>Retorna uma string de saudação.</returns>
-        
-            string Cumprimentar(string nome){
+
+            string Cumprimentar(string nome)
+            {
                 return $"Olá, {nome}!";
             }
 
             string saudacao = Cumprimentar("João");
             Console.WriteLine(saudacao);
+        }
+        
+        static void Interpolação()
+        {
+            string produto = "Computador";
+            double preco = 2500.50;
+            int quantidade = 2;
+            
+            // concatenando variáveis em uma frase:
+            Console.WriteLine($"O produto é: {produto}");
+            
+            // realizando cálculos e formatando a saída de acordo com a informação:
+            double total = preco * quantidade;
+            Console.WriteLine($"O valor total de {quantidade} unidades de {produto} é: R$ {total}");
+            
+            // usando a interpolação para exibir uma data formatada como estamos habituado:
+            DateTime dataAtual = DateTime.Now;
+            Console.WriteLine($"\nImpressão da data:");
+            Console.WriteLine($"Hoje é: {dataAtual:dd/MM/yyyy}");
         }
     }
 }  
