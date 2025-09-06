@@ -4,6 +4,15 @@ using System.Data;
 using System.Threading.Tasks.Dataflow;
 
 namespace ConsoleCSharpBasico_TeuNome{
+
+    public class Animal
+    {
+        public string Nome { get; set; }
+        public string Especie { get; set; }
+        public string Cor { get; set; }
+        public int Idade { get; set; }
+
+}
     class Program
     {
 
@@ -13,7 +22,8 @@ namespace ConsoleCSharpBasico_TeuNome{
             //DeclararVariaveis();
             //UsoDeVar();
             //Nullable();
-            Conversao();
+            //Conversao();
+            CriarObjetos();
         }
 
         static void Using()
@@ -89,6 +99,40 @@ namespace ConsoleCSharpBasico_TeuNome{
             Console.WriteLine($"O preço em texto é: {precoEmTexto}");
             Console.WriteLine($"Tipo da idade = {tipoIdade}\nTipo do preço = {tipopreco}");
 
+        }
+
+        static void CriarObjetos()
+        {
+
+            Animal animal1 = new Animal();// Criação de um novo objeto da classe Animal usando "new"
+
+            // Atribuição dos atribudos do objeto para "animal1"
+            animal1.Nome = "Rex";
+            animal1.Especie = "Cachorro";
+            animal1.Cor = "Caramelo";
+            animal1.Idade = 10;
+
+            // Atribuição dos atribudos do objeto para "animal1"
+            Animal animal2 = new Animal();
+
+            animal2.Nome = "Gaturno";
+            animal2.Especie = "Gato";
+            animal2.Cor = "Vermelho";
+            animal2.Idade = 5;
+
+            Console.WriteLine("Animal 1:");
+            Console.WriteLine($"Nome: {animal1.Nome}");
+            Console.WriteLine($"Espécie: {animal1.Especie}");
+            Console.WriteLine($"Cor: {animal1.Cor}");
+            Console.WriteLine($"Idade: {animal1.Idade}");
+            Console.WriteLine("------------------------------------------------------");
+
+
+            Console.WriteLine("Animal 2:");
+            Console.WriteLine($"Nome: {animal2.Nome}");
+            Console.WriteLine($"Espécie: {animal2.Especie}");
+            Console.WriteLine($"Cor: {animal2.Cor}");
+            Console.WriteLine($"Idade: {animal2.Idade}");
         }
     }
 }  
