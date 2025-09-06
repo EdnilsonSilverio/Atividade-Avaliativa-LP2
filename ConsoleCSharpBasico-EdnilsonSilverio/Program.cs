@@ -11,7 +11,8 @@ namespace ConsoleCSharpBasico_TeuNome{
         {
             //Using(); Comentado para enfatiza a visualização alvo do Commit
             //DeclararVariaveis();
-            UsoDeVar();
+            //UsoDeVar();
+            Nullable();
         }
 
         static void Using()
@@ -53,10 +54,24 @@ namespace ConsoleCSharpBasico_TeuNome{
             var nome = "Prefessor Silas"; // interpreta, em tempo de compilação, que a varíavel em questão é string
             var flt = 4.3f; // interpreta, em tempo de compilação, que a varíavel em questão é list
             const double pi = 3.14159; //Variável constante, cujo valor não será alterado durante a compilação.
-            
             Console.WriteLine("Soma = " + (numero + 3));
             Console.WriteLine("Olá, " + nome + "!");
-            Console.WriteLine("Cálculo utilizando PI = " + (flt*pi));
+            Console.WriteLine("Cálculo utilizando PI = " + (flt * pi));
+        }
+
+        static void Nullable()
+        {
+            //normalmente representada pelo sinal de "?" após o tipo da variável
+            string? nome = null; // Uma variável string que pode ser nula
+            int? idade = null; // Uma variável inteira que pode ser nula
+            nome = "Ednilson";
+
+            if (idade == null){
+                Console.WriteLine($"O {nome} preferiu não informar sua idade.");
+            }else{
+                Console.WriteLine($"O {nome} tem {idade} anos.");
+            }
+
         }
     }
 }  
