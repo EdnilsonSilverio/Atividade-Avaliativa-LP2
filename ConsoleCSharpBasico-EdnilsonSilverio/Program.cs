@@ -12,7 +12,8 @@ namespace ConsoleCSharpBasico_TeuNome{
             //Using(); Comentado para enfatiza a visualização alvo do Commit
             //DeclararVariaveis();
             //UsoDeVar();
-            Nullable();
+            //Nullable();
+            Conversao();
         }
 
         static void Using()
@@ -66,11 +67,27 @@ namespace ConsoleCSharpBasico_TeuNome{
             int? idade = null; // Uma variável inteira que pode ser nula
             nome = "Ednilson";
 
-            if (idade == null){
+            if (idade == null)
+            {
                 Console.WriteLine($"O {nome} preferiu não informar sua idade.");
-            }else{
+            }
+            else
+            {
                 Console.WriteLine($"O {nome} tem {idade} anos.");
             }
+        }
+        static void Conversao()
+        {
+            string idadeEmTexto = "12";
+            int idadeConvertidaInt = int.Parse(idadeEmTexto); // Converte a idade em int
+            double preco = 125.50;
+            string precoEmTexto = preco.ToString(); // Converte o preço em texto
+            Type tipoIdade = idadeConvertidaInt.GetType(); // Guarda o tipo da variável para validação
+            Type tipopreco = precoEmTexto.GetType();
+
+            Console.WriteLine($"Numero convertido: {idadeConvertidaInt}, em int: {idadeConvertidaInt}");
+            Console.WriteLine($"O preço em texto é: {precoEmTexto}");
+            Console.WriteLine($"Tipo da idade = {tipoIdade}\nTipo do preço = {tipopreco}");
 
         }
     }
