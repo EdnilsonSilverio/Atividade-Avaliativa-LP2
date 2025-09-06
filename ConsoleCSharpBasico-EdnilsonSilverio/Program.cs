@@ -25,7 +25,8 @@ namespace ConsoleCSharpBasico_TeuNome{
             //Conversao();
             //CriarObjetos();
             //DemonstrarOperadores();
-            ConcatenacaoDeStrings();
+            //ConcatenacaoDeStrings();
+            Arrays();
         }
 
         static void Using()
@@ -159,27 +160,62 @@ namespace ConsoleCSharpBasico_TeuNome{
             Console.WriteLine($"Sol OU Frio: {fazCalor || fazFrio}"); // Retornaa true se sol ou frio forem verdadeiros
             Console.WriteLine($"Não está Frio: {!fazFrio}"); // Retorna tru se frio for false e virse versa
         }
-        
+
         static void ConcatenacaoDeStrings()
         {
-        string nome = "Ednilson";
-        string sobrenome = "Silvério";
-        int idade = 21;
-        
-        string nomeCompleto = nome + " " + sobrenome; //Usando o operador de soma (+)
-        string mensagemIdade = "Nome: " + nomeCompleto + "\nIdade: " + idade;
-        Console.WriteLine("Mensagem com o Operador Soma");
-        Console.WriteLine(mensagemIdade);
-        Console.WriteLine("------------------------------------");
+            string nome = "Ednilson";
+            string sobrenome = "Silvério";
+            int idade = 21;
 
-        string mensagemFormatada = $"Nome: {nome} {sobrenome} \nIdade: {idade}"; // Usando a interpolação de strings, forma mais utilizada
-        Console.WriteLine("Mensagem com interpolação");
-        Console.WriteLine(mensagemFormatada);
-        Console.WriteLine("------------------------------------");
- 
-        string saudacao = String.Concat("Olá, ", nome, "!"); //Usando String.Concat()
-        Console.WriteLine("Mensagem com String.Concat()");
-        Console.WriteLine(saudacao);
+            string nomeCompleto = nome + " " + sobrenome; //Usando o operador de soma (+)
+            string mensagemIdade = "Nome: " + nomeCompleto + "\nIdade: " + idade;
+            Console.WriteLine("Mensagem com o Operador Soma");
+            Console.WriteLine(mensagemIdade);
+            Console.WriteLine("------------------------------------");
+
+            string mensagemFormatada = $"Nome: {nome} {sobrenome} \nIdade: {idade}"; // Usando a interpolação de strings, forma mais utilizada
+            Console.WriteLine("Mensagem com interpolação");
+            Console.WriteLine(mensagemFormatada);
+            Console.WriteLine("------------------------------------");
+
+            string saudacao = String.Concat("Olá, ", nome, "!"); //Usando String.Concat()
+            Console.WriteLine("Mensagem com String.Concat()");
+            Console.WriteLine(saudacao);
+        }
+        
+        static void Arrays()
+        {
+    
+            int[] numeros = new int[5]; // Criando um array de inteiros de 5 posições.
+            
+            // Atribuindo valores aos elementos do array de acordo com o indice de posição
+            numeros[0] = 10;
+            numeros[1] = 20;
+            numeros[2] = 30;
+            numeros[3] = 40;
+            numeros[4] = 50;
+
+
+            // Acessando e imprimindo um elemento específico
+            Console.WriteLine("Array de números:\n---------------------------------------");
+            Console.WriteLine($"O primeiro número no array é: {numeros[0]}");
+            Console.WriteLine($"O terceiro número no array é: {numeros[2]}");
+            Console.WriteLine($"O último número no array é: {numeros[4]}");
+
+            
+            // Declarando e inicializando um array de strings com valores
+            string[] motos = {"MT-03", "R3", "CB300", "G310GS"};
+
+            //Acessando um elemento e o tamanho do array
+            Console.WriteLine("---------------------------------------\nArray de motos:");
+            Console.WriteLine($"A segunda Moto é: {motos[1]}");
+            Console.WriteLine($"O array de motos tem {motos.Length} elementos.");
+
+            // Percorrendo o array com um loop 'for'e imprimindo cada elemento
+            Console.WriteLine("\nLista de motos:");
+            for (int i = 0; i < motos.Length; i++){
+                Console.WriteLine(motos[i]);
+            }
         }
     }
 }  
