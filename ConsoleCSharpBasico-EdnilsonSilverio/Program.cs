@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Text;
 using System.Data;
+using System.Threading.Tasks.Dataflow;
 
 namespace ConsoleCSharpBasico_TeuNome{
-    class Program{
+    class Program
+    {
 
         static void Main(string[] args)
         {
             //Using(); Comentado para enfatiza a visualização alvo do Commit
-            DeclararVariaveis();
+            //DeclararVariaveis();
+            UsoDeVar();
         }
 
         static void Using()
@@ -19,7 +22,7 @@ namespace ConsoleCSharpBasico_TeuNome{
             DateTime.Now);
             Console.WriteLine("FIM DO USING\n---------------------------------------");
         }
-        
+
         static void DeclararVariaveis()
         {
             int idade = 21;
@@ -42,6 +45,18 @@ namespace ConsoleCSharpBasico_TeuNome{
             {
                 Console.WriteLine("Você foi reprovado!\nTente novamente!");
             }
+        }
+
+        static void UsoDeVar()
+        {
+            var numero = 42; // interpreta, em tempo de compilação, que a varíavel em questão é int
+            var nome = "Prefessor Silas"; // interpreta, em tempo de compilação, que a varíavel em questão é string
+            var flt = 4.3f; // interpreta, em tempo de compilação, que a varíavel em questão é list
+            const double pi = 3.14159; //Variável constante, cujo valor não será alterado durante a compilação.
+            
+            Console.WriteLine("Soma = " + (numero + 3));
+            Console.WriteLine("Olá, " + nome + "!");
+            Console.WriteLine("Cálculo utilizando PI = " + (flt*pi));
         }
     }
 }  
