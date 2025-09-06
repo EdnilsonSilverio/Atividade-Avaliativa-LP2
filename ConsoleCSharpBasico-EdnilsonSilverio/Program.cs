@@ -29,7 +29,8 @@ namespace ConsoleCSharpBasico_TeuNome{
             //Arrays();
             //Condicionais();
             //Comentarios();
-            Interpolação();
+            //Interpolação();
+            ManipulacaoDeStrings();
         }
 
         static void Using()
@@ -324,24 +325,77 @@ namespace ConsoleCSharpBasico_TeuNome{
             string saudacao = Cumprimentar("João");
             Console.WriteLine(saudacao);
         }
-        
+
         static void Interpolação()
         {
             string produto = "Computador";
             double preco = 2500.50;
             int quantidade = 2;
-            
+
             // concatenando variáveis em uma frase:
             Console.WriteLine($"O produto é: {produto}");
-            
+
             // realizando cálculos e formatando a saída de acordo com a informação:
             double total = preco * quantidade;
             Console.WriteLine($"O valor total de {quantidade} unidades de {produto} é: R$ {total}");
-            
+
             // usando a interpolação para exibir uma data formatada como estamos habituado:
             DateTime dataAtual = DateTime.Now;
             Console.WriteLine($"\nImpressão da data:");
             Console.WriteLine($"Hoje é: {dataAtual:dd/MM/yyyy}");
+        }
+
+        static void ManipulacaoDeStrings()
+        {
+            string textoOriginal = "   Silvério, Ednilson!   ";
+
+            Console.WriteLine($"Texto Original: '{textoOriginal}'");
+
+            // Trim: remove espaços no início e no fim
+            string textoSemEspacos = textoOriginal.Trim();
+            Console.WriteLine($"Trim: '{textoSemEspacos}'");
+
+            // ToUpper: converte para maiúsculas
+            string textoMaiusculo = textoSemEspacos.ToUpper();
+            Console.WriteLine($"ToUpper: '{textoMaiusculo}'");
+
+            // ToLower: converte para minúsculas
+            string textoMinusculo = textoSemEspacos.ToLower();
+            Console.WriteLine($"ToLower: '{textoMinusculo}'");
+
+            // Replace: substitui uma parte da string
+            string textoSubstituido = textoSemEspacos.Replace("Ednilson", "Aluno");
+            Console.WriteLine($"Replace: '{textoSubstituido}'");
+
+            // Contains: verifica se a string contém um trecho
+            bool contemTrecho = textoSemEspacos.Contains("Ednilson");
+            Console.WriteLine($"Contains 'Ednilson': {contemTrecho}");
+
+            // Length: retorna o número de caracteres
+            int tamanho = textoSemEspacos.Length;
+            Console.WriteLine($"Length: {tamanho}");
+
+            // Acesso de acordo com a posição da letra []: acessa um caractere por posição
+            char primeiroCaractere = textoSemEspacos[0];
+            Console.WriteLine($"Primeiro caractere: '{primeiroCaractere}'");
+
+            // Split: divide a string em um array de strings
+            string frase = "Silas é uma bom professor";
+            string[] palavras = frase.Split(' ');
+            Console.WriteLine($"Primeira palavra com Split: {palavras[0]}");
+
+            // Insert: insere uma string em uma posição específica
+            string textoInserido = textoSemEspacos.Insert(19, "!");
+            Console.WriteLine($"Insert: '{textoInserido}'");
+
+            // Equals: compara se duas strings são iguais
+            string outraString = "Silvério, Ednilson!";
+            bool saoIguais = textoSemEspacos.Equals(outraString);
+            Console.WriteLine($"Equals: {saoIguais}");
+
+            // Copy: cria uma cópia da string
+            string copia = String.Copy(textoSemEspacos);
+            Console.WriteLine($"Copy: '{copia}'");
         }
     }
 }  
