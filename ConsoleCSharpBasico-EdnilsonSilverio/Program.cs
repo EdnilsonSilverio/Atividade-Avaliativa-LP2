@@ -30,7 +30,8 @@ namespace ConsoleCSharpBasico_TeuNome{
             //Condicionais();
             //Comentarios();
             //Interpolação();
-            ManipulacaoDeStrings();
+            //ManipulacaoDeStrings();
+            StringBuilder();
         }
 
         static void Using()
@@ -396,6 +397,34 @@ namespace ConsoleCSharpBasico_TeuNome{
             // Copy: cria uma cópia da string
             string copia = String.Copy(textoSemEspacos);
             Console.WriteLine($"Copy: '{copia}'");
+        }
+        
+    static void StringBuilder()
+        {
+            // criando uma nova instância de StringBuilder:
+            StringBuilder sb = new StringBuilder();
+
+            // adicionando texto com o método Append()
+            sb.Append("Bem vindo ");
+            sb.Append("ao ");
+            sb.Append("mundo ");
+            sb.Append("do ");
+            sb.Append("C#! ");
+
+            // adicionando uma linha com AppendLine()
+            sb.AppendLine("Isso é fácil!");
+
+            // inserindo texto em uma posição específica de acordo com o índice
+            sb.Insert(12, " meu");
+
+            // removendo um trecho com base nos parâmetros: 4 caracteres a partir da posição 9
+            sb.Remove(30, 14);
+
+            // substituindo um trecho
+            sb.Replace("fácil", "simples");
+
+            // imprimindo a string final usando ToString()
+            Console.WriteLine(sb.ToString());
         }
     }
 }  
