@@ -2,6 +2,7 @@
 using System.Text;
 using System.Data;
 using System.Threading.Tasks.Dataflow;
+using ResolucaoProblema;
 
 namespace ConsoleCSharpBasico_TeuNome{
 
@@ -31,7 +32,8 @@ namespace ConsoleCSharpBasico_TeuNome{
             //Comentarios();
             //Interpolação();
             //ManipulacaoDeStrings();
-            StringBuilder();
+            //StringBuilder();
+            ProcessarDados();
         }
 
         static void Using()
@@ -398,8 +400,8 @@ namespace ConsoleCSharpBasico_TeuNome{
             string copia = String.Copy(textoSemEspacos);
             Console.WriteLine($"Copy: '{copia}'");
         }
-        
-    static void StringBuilder()
+
+        static void StringBuilder()
         {
             // criando uma nova instância de StringBuilder:
             StringBuilder sb = new StringBuilder();
@@ -425,6 +427,36 @@ namespace ConsoleCSharpBasico_TeuNome{
 
             // imprimindo a string final usando ToString()
             Console.WriteLine(sb.ToString());
+        }
+        
+        static void ProcessarDados()
+        {
+
+            // Vetores para armazenar as 15 idades e pesos
+            int[] idades = new int[15];
+            double[] pesos = new double[15];
+            
+            // Loop para ler a idade e o peso de cada uma das 15 pessoas
+            for (int i = 0; i < 4; i++)
+            {
+                Console.WriteLine($"\nDigite os dados da pessoa {i + 1}:");
+
+                // Lendo e convertendo a idade
+                Console.Write("Idade: ");
+                string idadeEmTexto = Console.ReadLine();
+                idades[i] = int.Parse(idadeEmTexto); // Converte string para int
+
+                // Lendo e convertendo o peso
+                Console.Write("Peso: ");
+                string pesoEmTexto = Console.ReadLine();
+                pesos[i] = double.Parse(pesoEmTexto); // Converte string para double
+            }
+
+            // Criando uma instância da classe ProcessadorDeDados
+            MediaPesos processador = new MediaPesos();
+
+            // Chamando o método para calcular as médias com os dados lidos
+            processador.CalcularMediaPesosPorIdade(idades, pesos);
         }
     }
 }  
